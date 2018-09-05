@@ -1,113 +1,112 @@
 {
-	"id": "856f8702-f1a2-49e5-b5f2-c49279cad0eb",
-	"name": "GopherLab",
-	"description": "",
-	"auth": null,
-	"events": null,
-	"variables": [],
-	"order": [
-		"389f7da1-7ad0-4619-a489-703c8a182d43",
-		"af608cab-8d9f-480c-b04b-2e0d3492cb9d",
-		"91bab652-352f-42c0-b6dd-fb72e3c9be97",
-		"9a2f11e3-40a8-4a99-b99c-a8c8caaa5898"
-	],
-	"folders_order": [],
-	"folders": [],
-	"requests": [
+	"info": {
+		"_postman_id": "856f8702-f1a2-49e5-b5f2-c49279cad0eb",
+		"name": "GopherLab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
 		{
-			"id": "389f7da1-7ad0-4619-a489-703c8a182d43",
 			"name": "localhost:8080/ping",
-			"url": "localhost:8080/ping",
-			"description": "",
-			"data": [],
-			"dataMode": "raw",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json"
-				}
-			],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": [],
-			"folder": null,
-			"rawModeData": "{\n    \"stored_fields\" : [\"my_text.romanian\"],\n    \"query\" : {\n        \"term\" : { \"my_text.romanian\" : \"rochie\" }\n    }\n}",
-			"headers": "Content-Type: application/json\n",
-			"pathVariables": {}
-		},
-		{
-			"id": "91bab652-352f-42c0-b6dd-fb72e3c9be97",
-			"name": "localhost:8080/get-key/k3defttlovv",
-			"url": "localhost:8080/get-key/k3defttlovv",
-			"description": "",
-			"data": null,
-			"dataMode": "params",
-			"headerData": [],
-			"method": "GET",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": [],
-			"folder": null,
-			"headers": "",
-			"pathVariables": {}
-		},
-		{
-			"id": "9a2f11e3-40a8-4a99-b99c-a8c8caaa5898",
-			"name": "localhost:8080/del-keys?keys=k1&keys=k2",
-			"url": "localhost:8080/del-keys?keys=k1&keys=k2",
-			"description": "",
-			"data": null,
-			"dataMode": "params",
-			"headerData": [],
-			"method": "DELETE",
-			"pathVariableData": [],
-			"queryParams": [
-				{
-					"key": "keys",
-					"value": "k1",
-					"equals": true,
-					"description": "",
-					"enabled": true
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"stored_fields\" : [\"my_text.romanian\"],\n    \"query\" : {\n        \"term\" : { \"my_text.romanian\" : \"rochie\" }\n    }\n}"
 				},
-				{
-					"key": "keys",
-					"value": "k2",
-					"equals": true,
-					"description": "",
-					"enabled": true
+				"url": {
+					"raw": "localhost:8080/ping",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ping"
+					]
 				}
-			],
-			"auth": null,
-			"events": [],
-			"folder": null,
-			"headers": "",
-			"pathVariables": {}
+			},
+			"response": []
 		},
 		{
-			"id": "af608cab-8d9f-480c-b04b-2e0d3492cb9d",
 			"name": "localhost:8080/set-key",
-			"url": "localhost:8080/set-key",
-			"description": "",
-			"data": [],
-			"dataMode": "raw",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json"
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"key\": \"k3defttlovv\",\n\t\"value\": \"valueeee 150\",\n\t\"ttl\": 150\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/set-key",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"set-key"
+					]
 				}
-			],
-			"method": "POST",
-			"pathVariableData": [],
-			"queryParams": [],
-			"auth": null,
-			"events": [],
-			"folder": null,
-			"rawModeData": "{\n\t\"key\": \"k3defttlovv\",\n\t\"value\": \"valueeee 150\",\n\t\"ttl\": 150\n}",
-			"headers": "Content-Type: application/json\n",
-			"pathVariables": {}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/get-key/k3defttlovv",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/get-key/k3defttlovv",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get-key",
+						"k3defttlovv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/del-keys?keys=k1&keys=k2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/del-keys?keys=k1&keys=k2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"del-keys"
+					],
+					"query": [
+						{
+							"key": "keys",
+							"value": "k1"
+						},
+						{
+							"key": "keys",
+							"value": "k2"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
